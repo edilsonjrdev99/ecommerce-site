@@ -1,7 +1,11 @@
 <script setup lang="ts">
-// App.vue - componente principal com roteamento
+// COMPONENTS
+import Header from '@/components/layout/Header.vue';
+import Footer from '@/components/layout/Footer.vue';
 </script>
 
 <template>
+  <Header />
   <router-view />
+  <Footer />
 </template>

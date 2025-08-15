@@ -1,3 +1,108 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;600;700;800&display=swap');
+
+@import 'tailwindcss';
+
+/* Variáveis CSS Globais */
+:root {
+  --primary: #06a77d;
+  --secondary: #8a4fff;
+  --tertiary: #55c1ff;
+  --dark-bg: #2d2a32;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  h6 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+      line-height: 1;
+    }
+    h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+    h3 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    h6 {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  /* Links */
+  a {
+    transition: color 200ms ease-in-out;
+  }
+
+  /* Focus states */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #06a77d;
+    outline-offset: 2px;
+  }
+}
