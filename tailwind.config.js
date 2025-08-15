@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -119,23 +118,7 @@ export default {
       backdropBlur: {
         xs: '2px',
       },
-      gradientColorStops: {
-        'primary-gradient': 'var(--primary-gradient)',
-        'secondary-gradient': 'var(--secondary-gradient)',
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    // Plugin para variáveis CSS customizadas
-    function({ addBase }) {
-      addBase({
-        ':root': {
-          '--primary-gradient': 'linear-gradient(135deg, #06A77D 0%, #059669 100%)',
-          '--secondary-gradient': 'linear-gradient(135deg, #8A4FFF 0%, #7c3aed 100%)',
-          '--tertiary-gradient': 'linear-gradient(135deg, #55C1FF 0%, #0284c7 100%)',
-        },
-      });
-    },
-  ],
+  plugins: [],
 };

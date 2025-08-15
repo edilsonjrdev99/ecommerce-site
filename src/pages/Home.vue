@@ -1,9 +1,19 @@
 <script setup lang="ts">
-const ecommerceName = 'E-commerce site';
+import HeroBanner from '@/components/layout/HeroBanner.vue';
+import Section from '@/components/ui/Section.vue';
 </script>
 
 <template>
-  <div class="flex justify-center items-center">
-    {{ ecommerceName }} em construção...
+  <div>
+    <div>
+      <HeroBanner />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <Section
+        title="Produtos"
+        subtitle="Veja as novidades de produtos que acabaram de chegar"
+      />
+    </div>
   </div>
 </template>
