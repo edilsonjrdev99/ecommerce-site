@@ -3,6 +3,7 @@ import HeroBanner from '@/components/layout/HeroBanner.vue';
 import Section from '@/components/ui/Section.vue';
 import MainProducts from '@/components/layout/MainProducts.vue';
 import MainCategories from '@/components/layout/MainCategories.vue';
+import Testimonials from '@/components/layout/Testimonials.vue';
 </script>
 
 <template>
@@ -26,6 +27,15 @@ import MainCategories from '@/components/layout/MainCategories.vue';
         subtitle="Veja as novidades de produtos que acabaram de chegar"
       >
         <MainProducts />
+      </Section>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <Section
+        title="O que nossos clientes dizem"
+        subtitle="Depoimentos reais de quem já comprou conosco"
+      >
+        <Testimonials />
       </Section>
     </div>
   </div>
