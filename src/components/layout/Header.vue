@@ -11,9 +11,9 @@ const { itemsPageHeader, itemsCustomerHeader } = useHeader();
         v-for="itemPageHeader in itemsPageHeader"
         :key="itemPageHeader.label"
       >
-        <RouterLink :to="itemPageHeader.path">{{
-          itemPageHeader.label
-        }}</RouterLink>
+        <RouterLink :to="itemPageHeader.path">
+          {{ itemPageHeader.label }}
+        </RouterLink>
       </span>
     </div>
 
@@ -22,9 +22,9 @@ const { itemsPageHeader, itemsCustomerHeader } = useHeader();
         v-for="itemCustomerHeader in itemsCustomerHeader"
         :key="itemCustomerHeader.label"
       >
-        <RouterLink :to="itemCustomerHeader.path">{{
-          itemCustomerHeader.label
-        }}</RouterLink>
+        <RouterLink :to="itemCustomerHeader.path">
+          {{ itemCustomerHeader.label }}
+        </RouterLink>
       </span>
     </div>
   </div>

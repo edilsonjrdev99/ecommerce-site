@@ -9,7 +9,7 @@ withDefaults(defineProps<SectionType>(), {
 
 <template>
   <section
-    class="section-container"
+    class="section-container mt-2"
     :class="[centered ? 'text-center' : 'text-left', `section-${size}`]"
   >
     <h2 class="section-title">{{ title }}</h2>
