@@ -3,4 +3,5 @@ export interface MainProducts {
   name: string;
   description: string;
   price: number;
+  image: string;
 }

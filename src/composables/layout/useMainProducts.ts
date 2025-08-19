@@ -4,51 +4,67 @@ export default function useMainProducts() {
   const mainProducts: MainProducts[] = [
     {
       id: 1,
-      name: 'Produto 1',
-      description: 'Descrição do produto',
+      name: 'Smartphone Galaxy',
+      description: 'Smartphone com tela de 6.5 polegadas',
       price: 99.9,
+      image:
+        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
     },
     {
       id: 2,
-      name: 'Produto 2',
-      description: 'Descrição do produto',
+      name: 'Notebook Gamer',
+      description: 'Laptop para jogos e trabalho',
       price: 100.9,
+      image:
+        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400',
     },
     {
       id: 3,
-      name: 'Produto 3',
-      description: 'Descrição do produto',
+      name: 'Fone Bluetooth',
+      description: 'Fone sem fio com cancelamento de ruído',
       price: 189.9,
+      image:
+        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400',
     },
     {
       id: 4,
-      name: 'Produto 4',
-      description: 'Descrição do produto',
+      name: 'Smartwatch',
+      description: 'Relógio inteligente com GPS',
       price: 199.9,
+      image:
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
     },
     {
       id: 5,
-      name: 'Produto 5',
-      description: 'Descrição do produto',
+      name: 'Câmera Digital',
+      description: 'Câmera profissional 24MP',
       price: 299.9,
+      image:
+        'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400',
     },
     {
       id: 6,
-      name: 'Produto 6',
-      description: 'Descrição do produto',
+      name: 'Teclado Mecânico',
+      description: 'Teclado gamer RGB',
       price: 99.9,
+      image:
+        'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400',
     },
     {
       id: 7,
-      name: 'Produto 7',
-      description: 'Descrição do produto',
+      name: 'Monitor 4K',
+      description: 'Monitor ultra HD 27 polegadas',
       price: 399.9,
+      image:
+        'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400',
     },
     {
       id: 8,
-      name: 'Produto 8',
-      description: 'Descrição do produto',
+      name: 'Mouse Gamer',
+      description: 'Mouse óptico de alta precisão',
       price: 299.9,
+      image:
+        'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400',
     },
   ];
 
