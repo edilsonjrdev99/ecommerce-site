@@ -56,6 +56,7 @@ storybook-static/
 # Claude MCP
 .mcpignore
 mcp.config.json
+.claude/*
 
 # Package manager lock files (escolher um)
 # package-lock.json
