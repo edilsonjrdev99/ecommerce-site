@@ -14,6 +14,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@google/model-viewer": "^4.1.0",
     "@vueuse/core": "^13.6.0",
     "axios": "^1.11.0",
     "pinia": "^3.0.3",

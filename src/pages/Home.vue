@@ -3,6 +3,7 @@ import HeroBanner from '@/components/layout/HeroBanner.vue';
 import Section from '@/components/ui/Section.vue';
 import MainProducts from '@/components/layout/MainProducts.vue';
 import MainCategories from '@/components/layout/MainCategories.vue';
+import Product3D from '@/components/layout/Product3D.vue';
 import Brands from '@/components/layout/Brands.vue';
 import PromoBanner from '@/components/layout/PromoBanner.vue';
 import Testimonials from '@/components/layout/Testimonials.vue';
@@ -30,6 +31,15 @@ import Newsletter from '@/components/layout/Newsletter.vue';
         subtitle="Veja as novidades de produtos que acabaram de chegar"
       >
         <MainProducts />
+      </Section>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <Section
+        title="Experiência 3D & Realidade Aumentada"
+        subtitle="Explore produtos em 360° e veja como ficam no seu ambiente com AR"
+      >
+        <Product3D />
       </Section>
     </div>
 
