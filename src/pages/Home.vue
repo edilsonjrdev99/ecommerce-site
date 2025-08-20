@@ -4,6 +4,7 @@ import Section from '@/components/ui/Section.vue';
 import MainProducts from '@/components/layout/MainProducts.vue';
 import MainCategories from '@/components/layout/MainCategories.vue';
 import Testimonials from '@/components/layout/Testimonials.vue';
+import Newsletter from '@/components/layout/Newsletter.vue';
 </script>
 
 <template>
@@ -36,6 +37,15 @@ import Testimonials from '@/components/layout/Testimonials.vue';
         subtitle="Depoimentos reais de quem já comprou conosco"
       >
         <Testimonials />
+      </Section>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <Section
+        title="Newsletter"
+        subtitle="Mantenha-se sempre atualizado com nossas novidades"
+      >
+        <Newsletter />
       </Section>
     </div>
   </div>
