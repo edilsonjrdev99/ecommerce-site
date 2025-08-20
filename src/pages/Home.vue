@@ -3,6 +3,7 @@ import HeroBanner from '@/components/layout/HeroBanner.vue';
 import Section from '@/components/ui/Section.vue';
 import MainProducts from '@/components/layout/MainProducts.vue';
 import MainCategories from '@/components/layout/MainCategories.vue';
+import Brands from '@/components/layout/Brands.vue';
 import Testimonials from '@/components/layout/Testimonials.vue';
 import Newsletter from '@/components/layout/Newsletter.vue';
 </script>
@@ -28,6 +29,15 @@ import Newsletter from '@/components/layout/Newsletter.vue';
         subtitle="Veja as novidades de produtos que acabaram de chegar"
       >
         <MainProducts />
+      </Section>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <Section
+        title="Marcas Parceiras"
+        subtitle="Trabalhamos com as melhores marcas do mercado"
+      >
+        <Brands />
       </Section>
     </div>
 
