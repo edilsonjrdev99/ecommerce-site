@@ -7,7 +7,7 @@ export default function useMainCategories() {
       name: 'Eletrônicos',
       description: 'Smartphones, laptops e acessórios',
       image:
-        'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400',
+        'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=400',
       productCount: 156,
       slug: 'eletronicos',
     },
@@ -16,7 +16,7 @@ export default function useMainCategories() {
       name: 'Moda Feminina',
       description: 'Roupas, sapatos e acessórios',
       image:
-        'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400',
+        'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400',
       productCount: 284,
       slug: 'moda-feminina',
     },
@@ -34,7 +34,7 @@ export default function useMainCategories() {
       name: 'Esportes',
       description: 'Equipamentos e roupas esportivas',
       image:
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400',
+        'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400',
       productCount: 127,
       slug: 'esportes',
     },
