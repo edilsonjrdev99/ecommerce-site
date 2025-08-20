@@ -4,6 +4,7 @@ import Section from '@/components/ui/Section.vue';
 import MainProducts from '@/components/layout/MainProducts.vue';
 import MainCategories from '@/components/layout/MainCategories.vue';
 import Brands from '@/components/layout/Brands.vue';
+import PromoBanner from '@/components/layout/PromoBanner.vue';
 import Testimonials from '@/components/layout/Testimonials.vue';
 import Newsletter from '@/components/layout/Newsletter.vue';
 </script>
@@ -39,6 +40,10 @@ import Newsletter from '@/components/layout/Newsletter.vue';
       >
         <Brands />
       </Section>
+    </div>
+
+    <div class="container mx-auto px-4 my-12">
+      <PromoBanner />
     </div>
 
     <div class="container mx-auto px-4">
