@@ -48,15 +48,19 @@ const { testimonials, renderStars } = useTestimonials();
       </blockquote>
 
       <!-- Informação do usuário -->
-      <div class="flex items-center">
+      <div class="flex items-start">
         <img
           :src="testimonial.avatar"
           :alt="testimonial.name"
-          class="w-12 h-12 rounded-full object-cover mr-4"
+          class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0"
         />
-        <div>
-          <div class="font-semibold text-gray-900">{{ testimonial.name }}</div>
-          <div class="text-sm text-gray-500">{{ testimonial.role }}</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-gray-900 leading-tight">
+            {{ testimonial.name }}
+          </div>
+          <div class="text-sm text-gray-500 leading-tight mt-1">
+            {{ testimonial.role }}
+          </div>
         </div>
       </div>
     </div>
