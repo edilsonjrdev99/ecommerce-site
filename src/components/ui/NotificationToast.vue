@@ -26,8 +26,8 @@ const getNotificationStyles = (type: Notification['type']) => {
 </script>
 
 <template>
-  <Teleport to="body">
-    <div class="fixed top-4 right-4 z-50 space-y-2 max-w-sm">
+  <Teleport to="body" class="notify">
+    <div class="fixed top-4 right-4 z-[9999] space-y-2 max-w-sm">
       <TransitionGroup name="notification" tag="div">
         <div
           v-for="notification in notifications"
