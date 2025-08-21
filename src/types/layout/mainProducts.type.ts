@@ -3,5 +3,6 @@ export interface MainProducts {
   name: string;
   description: string;
   price: number;
+  discountValue?: number;
   image: string;
 }
