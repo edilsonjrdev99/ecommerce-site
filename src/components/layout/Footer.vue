@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useFooter from '@/composables/layout/useFooter';
+import Button from '@/components/ui/Button.vue';
 
 const { footerSections, socialLinks, paymentMethods } = useFooter();
 </script>
@@ -70,12 +71,7 @@ const { footerSections, socialLinks, paymentMethods } = useFooter();
             placeholder="Seu melhor email"
             class="flex-1 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
           />
-          <button
-            class="px-6 py-2 font-semibold rounded-lg transition-colors duration-200 hover:opacity-90"
-            style="background-color: var(--primary); color: white"
-          >
-            Inscrever
-          </button>
+          <Button label="Inscrever" size="md" />
         </div>
       </div>
 

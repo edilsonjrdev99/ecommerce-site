@@ -71,7 +71,7 @@ const { promoBanner, isValidPromo, timeRemaining } = usePromoBanner();
         </div>
 
         <button
-          class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+          class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
           style="background-color: var(--primary); color: white"
         >
           {{ promoBanner.ctaText }}

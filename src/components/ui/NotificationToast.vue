@@ -45,7 +45,7 @@ const getNotificationStyles = (type: Notification['type']) => {
 
           <button
             @click="removeNotification(notification.id)"
-            class="ml-3 text-current opacity-60 hover:opacity-100 transition-opacity"
+            class="ml-3 text-current opacity-60 hover:opacity-100 transition-opacity cursor-pointer"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path

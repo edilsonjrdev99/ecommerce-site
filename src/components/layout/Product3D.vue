@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import useProduct3D from '@/composables/layout/useProduct3D';
+import Button from '@/components/ui/Button.vue';
+import ShoppingCartIcon from '@/components/ui/icons/ShoppingCartIcon.vue';
+import EyeIcon from '@/components/ui/icons/EyeIcon.vue';
 
 const { featuredProduct3D, supportsAR } = useProduct3D();
 
@@ -95,18 +98,16 @@ onMounted(() => {
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 pt-4">
-        <button
-          class="flex-1 px-6 py-3 font-semibold rounded-lg transition-all duration-200 hover:scale-105"
-          style="background-color: var(--primary); color: white"
-        >
-          Comprar Agora
-        </button>
-        <button
-          class="flex-1 px-6 py-3 font-semibold rounded-lg border-2 transition-all duration-200 hover:bg-gray-50"
-          style="border-color: var(--primary); color: var(--primary)"
-        >
-          Ver Detalhes
-        </button>
+        <Button label="Comprar Agora" variant="primary" class="flex-1">
+          <template #rightIcon>
+            <ShoppingCartIcon />
+          </template>
+        </Button>
+        <Button label="Ver Detalhes" variant="outline" class="flex-1">
+          <template #rightIcon>
+            <EyeIcon />
+          </template>
+        </Button>
       </div>
 
       <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
