@@ -64,13 +64,13 @@ const getInputClasses = () => {
 };
 
 const handleInput = (event: Event) => {
-  const target = event.target as { value: string };
+  const target = event.target as unknown as { value: string };
   emit('update:modelValue', target.value);
 };
 
 const handleKeyup = (event: Event) => {
   emit('keyup', event);
-  if ((event as { key: string }).key === 'Enter') {
+  if ((event as unknown as { key: string }).key === 'Enter') {
     emit('enter', event);
   }
 };
