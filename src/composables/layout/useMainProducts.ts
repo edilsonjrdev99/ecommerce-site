@@ -17,7 +17,7 @@ export default function useMainProducts() {
       description: 'Laptop para jogos e trabalho',
       price: 3599.99,
       image:
-        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400',
+        'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400',
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export default function useMainProducts() {
       description: 'Relógio inteligente com GPS',
       price: 899.99,
       image:
-        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
+        'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400',
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ export default function useMainProducts() {
       description: 'Mouse óptico de alta precisão',
       price: 199.99,
       image:
-        'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400',
+        'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=400',
     },
   ];
 
