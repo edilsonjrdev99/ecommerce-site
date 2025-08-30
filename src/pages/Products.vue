@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import type { MainProducts } from '@/types/layout/mainProducts.type';
 
 import ProductCard from '@/components/common/ProductCard.vue';
 
 import useProducts from '@/composables/products/useProducts';
+
+const router = useRouter();
 
 const {
   filters,
@@ -18,10 +21,10 @@ const {
   resetFilters,
 } = useProducts();
 
-// Handlers dos eventos
+// Manipuladores dos eventos
 const handleProductClick = (product: MainProducts) => {
-  console.log('Produto clicado:', product);
-  // Implementar navegação para página do produto
+  console.log('Produto clicado na página Products:', product.id, product.name);
+  router.push(`/produto/${product.id}`);
 };
 
 const handleBuyClick = (product: MainProducts) => {
@@ -505,6 +508,7 @@ const handleDiscountFilter = (event: Event) => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 /* Estado vazio */
@@ -514,6 +518,7 @@ const handleDiscountFilter = (event: Event) => {
   background: white;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
 }
 
 .products-empty__icon {
@@ -567,11 +572,11 @@ const handleDiscountFilter = (event: Event) => {
 
   .products-sidebar {
     position: static;
-    order: 2;
+    order: 1;
   }
 
   .products-main {
-    order: 1;
+    order: 2;
   }
 }
 

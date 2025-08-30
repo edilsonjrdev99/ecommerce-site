@@ -1,5 +1,8 @@
 import { ref, computed } from 'vue';
-import type { MainProducts } from '@/types/layout/mainProducts.type';
+import type {
+  MainProducts,
+  ProductDetail,
+} from '@/types/layout/mainProducts.type';
 import type {
   ProductFilters,
   SortOption,
@@ -41,8 +44,7 @@ export default function useProducts() {
       name: 'Smartwatch',
       description: 'Relógio inteligente com GPS',
       price: 899.99,
-      image:
-        'https://images.unsplash.com/photo-1579586337278-3f436f25d4d1?w=400',
+      image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400',
     },
     {
       id: 5,
@@ -273,15 +275,161 @@ export default function useProducts() {
     };
   };
 
+  // Função auxiliar para gerar dados detalhados padrão
+  const generateDefaultProductDetail = (
+    product: MainProducts
+  ): ProductDetail => ({
+    ...product,
+    brand: 'Marca Premium',
+    category: 'Eletrônicos',
+    rating: 4.0 + Math.random(),
+    reviewCount: Math.floor(Math.random() * 200) + 50,
+    stock: Math.floor(Math.random() * 30) + 5,
+    images: [
+      product.image,
+      product.image.replace('w=400', 'w=600&auto=format&fit=crop&crop=center'),
+      product.image.replace('w=400', 'w=600&auto=format&fit=crop&crop=left'),
+    ],
+    specifications: [
+      { name: 'Modelo', value: product.name },
+      { name: 'Garantia', value: '1 ano' },
+      { name: 'Origem', value: 'Importado' },
+    ],
+    features: ['Alta qualidade', 'Design moderno', 'Fácil de usar'],
+    warranty: '1 ano de garantia do fabricante',
+    dimensions: { width: 100, height: 50, depth: 20, weight: 300 },
+    tags: ['eletrônicos', 'qualidade'],
+  });
+
+  // Dados detalhados dos produtos para a página de detalhe
+  const productDetails: Record<number, ProductDetail> = {
+    1: {
+      ...allProducts.find(p => p.id === 1)!,
+      brand: 'Galaxy',
+      category: 'Smartphone',
+      rating: 4.5,
+      reviewCount: 324,
+      stock: 15,
+      images: [
+        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600',
+        'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600',
+        'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600',
+        'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600',
+      ],
+      specifications: [
+        { name: 'Tela', value: '6.5" Super AMOLED' },
+        { name: 'Processador', value: 'Snapdragon 888' },
+        { name: 'RAM', value: '8GB' },
+        { name: 'Armazenamento', value: '128GB' },
+        { name: 'Câmera', value: '64MP + 12MP + 8MP' },
+        { name: 'Bateria', value: '4500mAh' },
+        { name: 'Sistema', value: 'Android 13' },
+      ],
+      features: [
+        'Carregamento rápido 65W',
+        'Resistente à água IP68',
+        'Leitor de digital no display',
+        'Reconhecimento facial',
+        'Conectividade 5G',
+        'Dual SIM',
+      ],
+      warranty: '1 ano de garantia do fabricante',
+      dimensions: { width: 75.6, height: 164.2, depth: 8.4, weight: 196 },
+      tags: ['smartphone', 'android', '5g', 'camera'],
+    },
+    2: {
+      ...allProducts.find(p => p.id === 2)!,
+      brand: 'TechPro',
+      category: 'Notebook',
+      rating: 4.7,
+      reviewCount: 156,
+      stock: 8,
+      images: [
+        'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=600',
+        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600',
+        'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600',
+      ],
+      specifications: [
+        { name: 'Processador', value: 'Intel Core i7-12700H' },
+        { name: 'Placa de Vídeo', value: 'RTX 3070 8GB' },
+        { name: 'RAM', value: '16GB DDR4' },
+        { name: 'Armazenamento', value: '512GB SSD NVMe' },
+        { name: 'Tela', value: '15.6" Full HD 144Hz' },
+        { name: 'Sistema', value: 'Windows 11 Home' },
+      ],
+      features: [
+        'Teclado retroiluminado RGB',
+        'Sistema de refrigeração avançado',
+        'Som Dolby Atmos',
+        'WiFi 6',
+        'Bluetooth 5.2',
+        'Webcam Full HD',
+      ],
+      warranty: '2 anos de garantia do fabricante',
+      dimensions: { width: 359, height: 27, depth: 238, weight: 2400 },
+      tags: ['notebook', 'gamer', 'intel', 'nvidia'],
+    },
+    3: {
+      ...allProducts.find(p => p.id === 3)!,
+      brand: 'SoundPro',
+      category: 'Áudio',
+      rating: 4.3,
+      reviewCount: 289,
+      stock: 22,
+      images: [
+        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600',
+        'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600',
+        'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600',
+      ],
+      specifications: [
+        { name: 'Tipo', value: 'Over-ear Bluetooth' },
+        { name: 'Bateria', value: '30 horas' },
+        { name: 'Alcance', value: '10 metros' },
+        { name: 'Carregamento', value: 'USB-C' },
+        { name: 'Peso', value: '250g' },
+      ],
+      features: [
+        'Cancelamento ativo de ruído',
+        'Som de alta fidelidade',
+        'Controles touch',
+        'Assistente de voz',
+        'Dobrável para transporte',
+      ],
+      warranty: '1 ano de garantia',
+      dimensions: { width: 190, height: 200, depth: 80, weight: 250 },
+      tags: ['fone', 'bluetooth', 'wireless', 'noise-cancelling'],
+    },
+  };
+
+  // Função para obter detalhes de um produto por ID
+  const getProductById = (id: number): ProductDetail | null => {
+    // Primeiro verifica se há dados detalhados customizados
+    if (productDetails[id]) {
+      return productDetails[id];
+    }
+
+    // Se não houver, busca o produto base e gera dados padrão
+    const baseProduct = allProducts.find(p => p.id === id);
+    if (baseProduct) {
+      return generateDefaultProductDetail(baseProduct);
+    }
+
+    return null;
+  };
+
   return {
     // Estado
     filters: filters.value,
     filteredProducts,
     productsStats,
+    allProducts,
 
     // Opções
     sortOptions,
     categoryOptions,
+
+    // Funções
+    getProductById,
 
     // Ações
     updateSearchTerm,

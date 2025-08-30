@@ -33,8 +33,7 @@ export default function useMainProducts() {
       name: 'Smartwatch',
       description: 'Relógio inteligente com GPS',
       price: 899.99,
-      image:
-        'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400',
+      image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400',
     },
     {
       id: 5,

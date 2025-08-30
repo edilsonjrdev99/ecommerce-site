@@ -1,16 +1,21 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import type { MainProducts } from '@/types/layout/mainProducts.type';
 
 import ProductCard from '@/components/common/ProductCard.vue';
 
-import useMainProducts from '@/composables/layout/useMainProducts';
+import useProducts from '@/composables/products/useProducts';
 
-const { mainProducts } = useMainProducts();
+const router = useRouter();
+const { allProducts } = useProducts();
 
-// Handlers dos eventos
+// Pega apenas os primeiros 8 produtos para exibir na home
+const mainProducts = allProducts.slice(0, 8);
+
+// Manipuladores dos eventos
 const handleProductClick = (product: MainProducts) => {
-  console.log('Produto clicado:', product);
-  // Implementar navegação para página do produto
+  console.log('Produto clicado na Home:', product.id, product.name);
+  router.push(`/produto/${product.id}`);
 };
 
 const handleBuyClick = (product: MainProducts) => {

@@ -27,10 +27,12 @@ const emit = defineEmits<{
 }>();
 
 const handleProductClick = () => {
+  console.log('ProductCard clicado:', props.product.id, props.product.name);
   emit('click', props.product);
 };
 
 const handleBuyClick = (event: Event) => {
+  console.log('Botão comprar clicado no ProductCard:', props.product.id);
   event.stopPropagation();
   emit('buyClick', props.product);
 };
