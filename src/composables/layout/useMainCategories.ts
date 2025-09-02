@@ -4,39 +4,39 @@ export default function useMainCategories() {
   const mainCategories: MainCategory[] = [
     {
       id: 1,
-      name: 'Eletrônicos',
-      description: 'Smartphones, laptops e acessórios',
+      name: 'Smartphones',
+      description: 'Galaxy, câmeras e acessórios móveis',
       image:
-        'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=400',
-      productCount: 156,
-      slug: 'eletronicos',
+        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&auto=format&fit=crop',
+      productCount: 3, // Smartphone Galaxy + Câmera Digital + Carregador Wireless
+      slug: 'smartphones',
     },
     {
       id: 2,
-      name: 'Moda Feminina',
-      description: 'Roupas, sapatos e acessórios',
+      name: 'Laptops',
+      description: 'Notebooks, periféricos e acessórios',
       image:
-        'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400',
-      productCount: 284,
-      slug: 'moda-feminina',
+        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&auto=format&fit=crop',
+      productCount: 6, // Notebook + Teclado + Monitor + Mouse + Impressora + Webcam
+      slug: 'laptops',
     },
     {
       id: 3,
-      name: 'Casa & Decoração',
-      description: 'Móveis e objetos decorativos',
+      name: 'Fones de Ouvido',
+      description: 'Áudio premium e fones bluetooth',
       image:
-        'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400',
-      productCount: 98,
-      slug: 'casa-decoracao',
+        'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&auto=format&fit=crop',
+      productCount: 1, // Fone Bluetooth
+      slug: 'fones',
     },
     {
       id: 4,
-      name: 'Esportes',
-      description: 'Equipamentos e roupas esportivas',
+      name: 'Tablets',
+      description: 'Tablets e dispositivos portáteis',
       image:
-        'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400',
-      productCount: 127,
-      slug: 'esportes',
+        'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&auto=format&fit=crop',
+      productCount: 2, // Tablet Android + Smartwatch
+      slug: 'tablets',
     },
   ];
 

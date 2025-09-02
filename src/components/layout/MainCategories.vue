@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import '@splidejs/splide/css/core';
 
+import type { MainCategory } from '@/types/layout/mainCategories.type';
+
 import useMainCategories from '@/composables/layout/useMainCategories';
 
+const router = useRouter();
 const { mainCategories } = useMainCategories();
+
+// Handler para clique na categoria
+const handleCategoryClick = (category: MainCategory) => {
+  console.log('Categoria clicada:', category.name, category.slug);
+  router.push(`/categoria/${category.slug}`);
+};
 
 // Configurações do Splide para mobile
 const splideOptions = {
@@ -30,6 +41,7 @@ const splideOptions = {
       class="category-card"
       v-for="category in mainCategories"
       :key="category.id"
+      @click="handleCategoryClick(category)"
     >
       <div class="category-card__image-wrapper">
         <img
@@ -59,7 +71,7 @@ const splideOptions = {
         :key="category.id"
         class="categories-splide__slide"
       >
-        <div class="category-card">
+        <div class="category-card" @click="handleCategoryClick(category)">
           <div class="category-card__image-wrapper">
             <img
               :src="category.image"
