@@ -31,7 +31,7 @@ const handleCategoryClick = (category: CategoryListItem) => {
 <template>
   <div class="categories-page">
     <!-- Seção Hero -->
-    <Section class="bg-emerald-600 text-white -mt-2">
+    <Section class="bg-emerald-600 text-white hero-section">
       <div class="relative overflow-hidden">
         <!-- Elementos decorativos -->
         <div
@@ -245,6 +245,21 @@ const handleCategoryClick = (category: CategoryListItem) => {
 .categories-page {
   min-height: 100vh;
   background: #f9fafb;
+}
+
+/* Hero section sem espaçamento superior */
+.hero-section {
+  margin-top: 0 !important;
+}
+
+/* Remove espaçamento do primeiro Section */
+.categories-page :first-child {
+  margin-top: 0 !important;
+}
+
+/* Remove espaçamento específico do section-container */
+.hero-section .section-container {
+  margin-top: 0 !important;
 }
 
 /* Cards de categoria */

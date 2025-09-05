@@ -13,7 +13,7 @@ export default function useCategories() {
       description: 'Descubra os melhores smartphones com tecnologia de ponta',
       image:
         'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop',
-      productsCount: 5,
+      productsCount: 3,
       slug: 'smartphones',
       isPopular: true,
     },
@@ -23,7 +23,7 @@ export default function useCategories() {
       description: 'Notebooks e laptops para trabalho e entretenimento',
       image:
         'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop',
-      productsCount: 7,
+      productsCount: 6,
       slug: 'laptops',
       isPopular: true,
     },
@@ -63,7 +63,7 @@ export default function useCategories() {
       name: 'Casa Inteligente',
       description: 'Dispositivos inteligentes para automatizar sua casa',
       image:
-        'https://images.unsplash.com/photo-1558618666-fbd1a2d4d6e4?w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1558882224-dda166733046?w=800&auto=format&fit=crop',
       productsCount: 0,
       slug: 'casa-inteligente',
       isPopular: false,

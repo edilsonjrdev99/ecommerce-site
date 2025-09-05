@@ -398,7 +398,7 @@ function getCategoryImage(categoryId: string): string {
     gaming:
       'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800&auto=format&fit=crop',
     'casa-inteligente':
-      'https://images.unsplash.com/photo-1558618666-fbd1a2d4d6e4?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1558882224-dda166733046?w=800&auto=format&fit=crop',
   };
   return (
     images[categoryId] ||
