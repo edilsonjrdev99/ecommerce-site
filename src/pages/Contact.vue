@@ -11,7 +11,7 @@ const { contactInfo, isSubmitting, handleSubmit, form, errors } = useContact();
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Seção Hero -->
-    <Section class="bg-emerald-600 text-white">
+    <Section class="bg-emerald-600 text-white -mt-2">
       <div class="relative overflow-hidden">
         <!-- Elementos decorativos -->
         <div
