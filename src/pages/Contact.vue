@@ -9,9 +9,9 @@ const { contactInfo, isSubmitting, handleSubmit, form, errors } = useContact();
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-50 !mt-0">
     <!-- Seção Hero -->
-    <Section class="bg-emerald-600 text-white -mt-2">
+    <Section class="bg-emerald-600 text-white !mt-0">
       <div class="relative overflow-hidden">
         <!-- Elementos decorativos -->
         <div

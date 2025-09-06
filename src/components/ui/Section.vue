@@ -12,8 +12,8 @@ withDefaults(defineProps<SectionType>(), {
     class="section-container mt-2"
     :class="[centered ? 'text-center' : 'text-left', `section-${size}`]"
   >
-    <h2 class="section-title">{{ title }}</h2>
-    <p class="section-subtitle">{{ subtitle }}</p>
+    <h2 v-if="title" class="section-title">{{ title }}</h2>
+    <p v-if="subtitle" class="section-subtitle">{{ subtitle }}</p>
 
     <!-- Slot para conteúdo adicional -->
     <slot />
