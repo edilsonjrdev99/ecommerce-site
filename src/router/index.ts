@@ -37,6 +37,11 @@ const routes: RouteRecordRaw[] = [
     name: 'Contact',
     component: () => import('@/pages/Contact.vue'),
   },
+  {
+    path: '/entrar',
+    name: 'Login',
+    component: () => import('@/pages/Login.vue'),
+  },
 ];
 
 const router = createRouter({

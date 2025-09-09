@@ -11,7 +11,7 @@ export default function useHeader() {
   ];
 
   const itemsCustomerHeader: HeaderType[] = [
-    { label: 'Entrar', path: '/login' },
+    { label: 'Entrar', path: '/entrar' },
     { label: 'Carrinho', path: '/carrinho' },
   ];
 
