@@ -14,6 +14,7 @@ const {
   currentProduct,
   loading,
   selectedImage,
+  selectedImageIndex,
   quantity,
   finalPrice,
   hasDiscount,
@@ -225,7 +226,13 @@ const goBack = () => {
                 </button>
                 <input
                   :value="quantity"
-                  @input="setQuantity(parseInt($event.target.value))"
+                  @input="
+                    setQuantity(
+                      parseInt(
+                        ($event.target as HTMLInputElement)?.value || '1'
+                      )
+                    )
+                  "
                   type="number"
                   min="1"
                   :max="currentProduct.stock"

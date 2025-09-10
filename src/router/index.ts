@@ -47,7 +47,7 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_, __, savedPosition) {
     // Sempre rola para o topo quando navegar para uma nova página
     if (savedPosition) {
       return savedPosition;

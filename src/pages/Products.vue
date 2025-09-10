@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import type { MainProducts } from '@/types/layout/mainProducts.type';
+import type { SortOption } from '@/types/products/productFilters.type';
 
 import ProductCard from '@/components/common/ProductCard.vue';
 
@@ -52,7 +53,7 @@ const handleCategoryChange = (event: Event) => {
 const handleSortChange = (event: Event) => {
   const target = event.target as { value: string } | null;
   if (target) {
-    updateSortBy(target.value as string);
+    updateSortBy(target.value as SortOption);
   }
 };
 

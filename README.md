@@ -32,25 +32,27 @@ npm run preview
 
 ## 🛠️ Scripts Disponíveis
 
-| Script | Descrição |
-|--------|-----------|
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run build` | Build de produção |
-| `npm run preview` | Preview da build |
-| `npm run lint` | Lint e auto-fix |
-| `npm run lint:check` | Verificar lint sem corrigir |
-| `npm run format` | Formatar código |
-| `npm run format:check` | Verificar formatação |
+| Script                 | Descrição                   |
+| ---------------------- | --------------------------- |
+| `npm run dev`          | Servidor de desenvolvimento |
+| `npm run build`        | Build de produção           |
+| `npm run preview`      | Preview da build            |
+| `npm run lint`         | Lint e auto-fix             |
+| `npm run lint:check`   | Verificar lint sem corrigir |
+| `npm run format`       | Formatar código             |
+| `npm run format:check` | Verificar formatação        |
 
 ## 📋 Padrões de Código
 
 ### ESLint & Prettier
+
 - Configuração moderna com ESLint 9
 - Prettier integrado para formatação consistente
 - Regras específicas para Vue 3 e TypeScript
 - Auto-fix em `npm run lint`
 
 ### Conventional Commits
+
 Este projeto segue o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```bash
@@ -62,6 +64,7 @@ git commit -m "refactor: Improve component structure"
 ```
 
 **Tipos permitidos:**
+
 - `feat` - Nova funcionalidade
 - `fix` - Correção de bug
 - `docs` - Documentação
@@ -75,6 +78,7 @@ git commit -m "refactor: Improve component structure"
 - `revert` - Reverter commits
 
 ### Git Hooks (Husky)
+
 - **pre-commit**: Executa lint e verificação de formato
 - **commit-msg**: Valida mensagem do commit
 
@@ -99,18 +103,22 @@ src/
 ## ⚙️ Configurações
 
 ### Alias de Importação
+
 - `@/` → `src/`
 
 ### Tailwind CSS
+
 - Plugin `@tailwindcss/forms` habilitado
 - Configuração extensível em `tailwind.config.js`
 
 ### TypeScript
+
 - Configuração strict habilitada
 - Path mapping para imports limpos
 - Suporte completo ao Vue 3
 
 ### Vite
+
 - HMR (Hot Module Replacement)
 - Build otimizado
 - Code splitting automático

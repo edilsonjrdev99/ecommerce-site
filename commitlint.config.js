@@ -5,17 +5,17 @@ export default {
       2,
       'always',
       [
-        'feat',     // nova funcionalidade
-        'fix',      // correção de bug
-        'docs',     // documentação
-        'style',    // formatação, ponto e vírgula, etc
+        'feat', // nova funcionalidade
+        'fix', // correção de bug
+        'docs', // documentação
+        'style', // formatação, ponto e vírgula, etc
         'refactor', // refatoração de código
-        'test',     // adição de testes
-        'chore',    // mudanças em ferramentas, configurações
-        'perf',     // melhoria de performance
-        'ci',       // mudanças no CI/CD
-        'build',    // mudanças no sistema de build
-        'revert',   // reverter commits anteriores
+        'test', // adição de testes
+        'chore', // mudanças em ferramentas, configurações
+        'perf', // melhoria de performance
+        'ci', // mudanças no CI/CD
+        'build', // mudanças no sistema de build
+        'revert', // reverter commits anteriores
       ],
     ],
     'subject-case': [2, 'always', 'sentence-case'],

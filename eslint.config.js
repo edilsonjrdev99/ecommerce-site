@@ -39,9 +39,12 @@ export default [
     rules: {
       // Vue específicas
       'vue/multi-word-component-names': 'off',
-      'vue/block-order': ['error', {
-        order: ['script', 'template', 'style']
-      }],
+      'vue/block-order': [
+        'error',
+        {
+          order: ['script', 'template', 'style'],
+        },
+      ],
       'vue/html-indent': ['error', 2],
       'vue/max-attributes-per-line': [
         'error',
