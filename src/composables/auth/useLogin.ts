@@ -4,15 +4,16 @@ import { ref, reactive } from 'vue';
 import type {
   LoginForm,
   LoginCredentials,
-  AuthUser,
   AuthResponse,
 } from '@/types/auth/login.type';
 
 import useNotifications from '@/composables/ui/useNotifications';
+import useAuth from '@/composables/auth/useAuth';
 
 export default function useLogin() {
   const isLoading = ref(false);
   const { success, error } = useNotifications();
+  const { user, isAuthenticated, setUser, logout } = useAuth();
 
   // Formulário reativo de login
   const form: LoginForm = reactive({
@@ -23,10 +24,6 @@ export default function useLogin() {
 
   // Erros de validação
   const errors: Ref<Partial<LoginForm>> = ref({});
-
-  // Estado do usuário autenticado
-  const user: Ref<AuthUser | null> = ref(null);
-  const isAuthenticated = ref(false);
 
   // Função para validar o formulário
   const validateForm = (): boolean => {
@@ -89,8 +86,7 @@ export default function useLogin() {
       const response = await authenticateUser(credentials);
 
       // Armazenar dados do usuário
-      user.value = response.user;
-      isAuthenticated.value = true;
+      setUser(response.user);
 
       // Armazenar token
       if (form.rememberMe) {
@@ -141,37 +137,6 @@ export default function useLogin() {
     }
   };
 
-  // Função para fazer logout
-  const logout = (): void => {
-    user.value = null;
-    isAuthenticated.value = false;
-    localStorage.removeItem('auth_token');
-    localStorage.removeItem('user_data');
-    window.sessionStorage.removeItem('auth_token');
-    window.sessionStorage.removeItem('user_data');
-
-    success('Logout realizado com sucesso!', 'Até a próxima!', 3000);
-  };
-
-  // Função para verificar se existe sessão ativa
-  const checkAuthStatus = (): void => {
-    const token =
-      localStorage.getItem('auth_token') ||
-      window.sessionStorage.getItem('auth_token');
-    const userData =
-      localStorage.getItem('user_data') ||
-      window.sessionStorage.getItem('user_data');
-
-    if (token && userData) {
-      try {
-        user.value = JSON.parse(userData) as AuthUser;
-        isAuthenticated.value = true;
-      } catch {
-        logout(); // Limpar dados inválidos
-      }
-    }
-  };
-
   // Função para lidar com o envio do formulário
   const handleSubmit = async () => {
     if (!validateForm()) return;
@@ -182,9 +147,6 @@ export default function useLogin() {
       // Erro já foi tratado na função login com notificação
     }
   };
-
-  // Verificar status de autenticação ao inicializar
-  checkAuthStatus();
 
   return {
     // Estados
@@ -197,6 +159,5 @@ export default function useLogin() {
     // Métodos
     handleSubmit,
     logout,
-    checkAuthStatus,
   };
 }

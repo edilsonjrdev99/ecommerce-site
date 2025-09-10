@@ -2,8 +2,10 @@
 import { ref } from 'vue';
 
 import useHeader from '@/composables/layout/useHeader';
+import useAuth from '@/composables/auth/useAuth';
 
 const { itemsPageHeader, itemsCustomerHeader } = useHeader();
+const { user, isAuthenticated } = useAuth();
 const isMenuOpen = ref<boolean>(false);
 
 const toggleMenu = () => {
@@ -33,14 +35,25 @@ const closeMenu = () => {
           <div
             class="flex items-center space-x-6 border-l border-white/20 pl-6"
           >
-            <RouterLink
-              v-for="item in itemsCustomerHeader"
-              :key="item.label"
-              :to="item.path"
-              class="header__nav-link"
-            >
-              {{ item.label }}
-            </RouterLink>
+            <template v-if="isAuthenticated">
+              <span class="header__user-greeting"> Olá, {{ user?.name }} </span>
+              <RouterLink to="/cliente" class="header__nav-link">
+                Minha Conta
+              </RouterLink>
+              <RouterLink to="/carrinho" class="header__nav-link">
+                Carrinho
+              </RouterLink>
+            </template>
+            <template v-else>
+              <RouterLink
+                v-for="item in itemsCustomerHeader"
+                :key="item.label"
+                :to="item.path"
+                class="header__nav-link"
+              >
+                {{ item.label }}
+              </RouterLink>
+            </template>
           </div>
         </nav>
 
@@ -97,15 +110,34 @@ const closeMenu = () => {
 
         <div class="header__mobile-section">
           <h3>Conta</h3>
-          <RouterLink
-            v-for="item in itemsCustomerHeader"
-            :key="item.label"
-            :to="item.path"
-            class="header__mobile-link"
-            @click="closeMenu"
-          >
-            {{ item.label }}
-          </RouterLink>
+          <template v-if="isAuthenticated">
+            <div class="header__mobile-user">Olá, {{ user?.name }}</div>
+            <RouterLink
+              to="/cliente"
+              class="header__mobile-link"
+              @click="closeMenu"
+            >
+              Minha Conta
+            </RouterLink>
+            <RouterLink
+              to="/carrinho"
+              class="header__mobile-link"
+              @click="closeMenu"
+            >
+              Carrinho
+            </RouterLink>
+          </template>
+          <template v-else>
+            <RouterLink
+              v-for="item in itemsCustomerHeader"
+              :key="item.label"
+              :to="item.path"
+              class="header__mobile-link"
+              @click="closeMenu"
+            >
+              {{ item.label }}
+            </RouterLink>
+          </template>
         </div>
       </div>
     </nav>
@@ -146,6 +178,13 @@ const closeMenu = () => {
 
 .header__nav-link:hover {
   border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Element: User greeting */
+.header__user-greeting {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 /* Element: Botão hambúrguer */
@@ -301,5 +340,16 @@ const closeMenu = () => {
 
 .header__mobile-link:active {
   transform: scale(0.98);
+}
+
+/* Element: Mobile user greeting */
+.header__mobile-user {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 </style>

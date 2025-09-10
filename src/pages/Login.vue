@@ -1,11 +1,21 @@
 <script setup lang="ts">
+import { watch } from 'vue';
+import { useRouter } from 'vue-router';
 import Button from '@/components/ui/Button.vue';
 import Input from '@/components/ui/Input.vue';
 import Section from '@/components/ui/Section.vue';
 
 import useLogin from '@/composables/auth/useLogin';
 
-const { form, errors, isLoading, handleSubmit } = useLogin();
+const { form, errors, isLoading, handleSubmit, isAuthenticated } = useLogin();
+const router = useRouter();
+
+// Redirecionar para página do cliente após login bem-sucedido
+watch(isAuthenticated, newValue => {
+  if (newValue) {
+    router.push('/cliente');
+  }
+});
 
 // Ícones SVG para os campos
 const emailIcon =
